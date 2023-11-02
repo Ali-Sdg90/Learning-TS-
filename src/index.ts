@@ -69,16 +69,24 @@ const getKeys = (obj: object) => {
     return keys;
 };
 
-const me: object = {
+let me: {
+    name: string;
+    age: number;
+    date: string;
+};
+
+me = {
     name: "ali",
     age: 21,
     date: "1402-08-11",
 };
 
-const keys: Array<string> = getKeys(me);
+const keys: Array<any> = getKeys(me);
 
-for (let i = 0; i < keys.length; i++) {
-    console.log(me[keys[i]]);
+for (let i: number = 0; i < keys.length; i++) {
+    const key: string = keys[i];
+    const output: any = me[key as keyof typeof me];
+    console.log(output);
 }
 
 // ---------------------------------------
@@ -138,3 +146,46 @@ buyReq = [
 ];
 
 // ---------------------------------------
+
+const voidFunc = (input: any): void => {
+    const hello = "hello";
+    // return "hi";
+};
+
+const nullFunc = (input: any): null => {
+    const hello = "hello";
+    return null;
+};
+
+const undefinedFunc = (input: any): undefined => {
+    const hello = "hello";
+    // return hello;
+    // return bye;
+    return undefined;
+};
+
+const anyFunc = (input?: any): any => {
+    return 2;
+};
+
+const unknownFunc = (input?: any): unknown => {
+    return 2;
+};
+
+console.log(unknownFunc());
+
+const neverFunc = (input: any): never => {
+    while (true) {}
+};
+
+// ---------------------------------------
+
+const value: unknown = "hello";
+console.log((value as string).length);
+
+// ---------------------------------------
+
+let age = 21;
+for (let i: number = 0; i < 10; i++) {
+    age++;
+}
