@@ -1,72 +1,40 @@
 "use strict";
-const getKeys = (obj) => {
-    const keys = Object.keys(obj);
-    return keys;
-};
-let me;
-me = {
-    name: "ali",
-    age: 21,
-    date: "1402-08-11",
-};
-const keys = getKeys(me);
-for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    const output = me[key];
-    console.log(output);
-}
-const logger = (input) => {
-    console.log(input);
-};
-logger("hi");
-logger(21);
-let buyReq;
-buyReq = [
+var _a;
+let interns = [
     {
-        product: [
-            {
-                name: "Product 1",
-                price: 10.99,
-                discount: 2.0,
-                amount: 3,
-            },
-            {
-                name: "Product 2",
-                price: 19.99,
-                amount: 1,
-            },
-        ],
-        payment: {
-            price: 50.97,
-            method: "Credit Card",
-        },
+        name: "Ali",
+        age: 21,
+        ghID: "Ali_Sdg90",
+        internID: 20,
+    },
+    {
+        name: "Mostafa",
+        age: 23,
+        internID: 10,
     },
 ];
-const voidFunc = (input) => {
-    const hello = "hello";
+interns[0].name = "Mamad";
+console.log(interns[0]);
+const ali = {
+    name: "Ali",
+    age: 21,
+    ghID: "Ali_Sdg90",
+    internID: 20,
 };
-const nullFunc = (input) => {
-    const hello = "hello";
-    return null;
+const mostafa = {
+    name: "Mostafa",
+    age: 23,
+    internID: 10,
 };
-const undefinedFunc = (input) => {
-    const hello = "hello";
-    return undefined;
+const showYear = (date, showDate = true) => {
+    if (showDate) {
+        return new Date(date).getFullYear();
+    }
+    else {
+        return;
+    }
 };
-const anyFunc = (input) => {
-    return 2;
-};
-const unknownFunc = (input) => {
-    return 2;
-};
-console.log(unknownFunc());
-const neverFunc = (input) => {
-    while (true) { }
-};
-const value = "hello";
-console.log(value.length);
-let age = 21;
-for (let i = 0; i < 10; i++) {
-    age++;
-}
+console.log(showYear(new Date()));
+console.log((_a = mostafa === null || mostafa === void 0 ? void 0 : mostafa.ghID) === null || _a === void 0 ? void 0 : _a.length);
+console.log(mostafa.ghID);
 //# sourceMappingURL=index.js.map

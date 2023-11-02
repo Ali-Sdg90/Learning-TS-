@@ -64,39 +64,39 @@
 
 // ---------------------------------------
 
-const getKeys = (obj: object) => {
-    const keys: string[] = Object.keys(obj);
-    return keys;
-};
+// const getKeys = (obj: object) => {
+//     const keys: string[] = Object.keys(obj);
+//     return keys;
+// };
 
-let me: {
-    name: string;
-    age: number;
-    date: string;
-};
+// let me: {
+//     name: string;
+//     age: number;
+//     date: string;
+// };
 
-me = {
-    name: "ali",
-    age: 21,
-    date: "1402-08-11",
-};
+// me = {
+//     name: "ali",
+//     age: 21,
+//     date: "1402-08-11",
+// };
 
-const keys: Array<any> = getKeys(me);
+// const keys: Array<any> = getKeys(me);
 
-for (let i: number = 0; i < keys.length; i++) {
-    const key: string = keys[i];
-    const output: any = me[key as keyof typeof me];
-    console.log(output);
-}
+// for (let i: number = 0; i < keys.length; i++) {
+//     const key: string = keys[i];
+//     const output: any = me[key as keyof typeof me];
+//     console.log(output);
+// }
 
 // ---------------------------------------
 
-const logger = (input: string | number): void | object[] => {
-    console.log(input);
-};
+// const logger = (input: string | number): void | object[] => {
+//     console.log(input);
+// };
 
-logger("hi");
-logger(21);
+// logger("hi");
+// logger(21);
 
 // ---------------------------------------
 // Anonymous types
@@ -110,82 +110,167 @@ logger(21);
 
 // let payment: { price: number; method: string };
 
-let buyReq: {
-    product: {
-        name: string;
-        price: number;
-        discount?: number;
-        amount: number;
-    }[];
-    payment: {
-        price: number;
-        method: string;
-    };
-}[];
+// let buyReq: {
+//     product: {
+//         name: string;
+//         price: number;
+//         discount?: number;
+//         amount: number;
+//     }[];
+//     payment: {
+//         price: number;
+//         method: string;
+//     };
+// }[];
 
-buyReq = [
+// buyReq = [
+//     {
+//         product: [
+//             {
+//                 name: "Product 1",
+//                 price: 10.99,
+//                 discount: 2.0,
+//                 amount: 3,
+//             },
+//             {
+//                 name: "Product 2",
+//                 price: 19.99,
+//                 amount: 1,
+//             },
+//         ],
+//         payment: {
+//             price: 50.97,
+//             method: "Credit Card",
+//         },
+//     },
+// ];
+
+// ---------------------------------------
+
+// const voidFunc = (input: any): void => {
+//     const hello = "hello";
+//     // return "hi";
+// };
+
+// const nullFunc = (input: any): null => {
+//     const hello = "hello";
+//     return null;
+// };
+
+// const undefinedFunc = (input: any): undefined => {
+//     const hello = "hello";
+//     // return hello;
+//     // return bye;
+//     return undefined;
+// };
+
+// const anyFunc = (input?: any): any => {
+//     return 2;
+// };
+
+// const unknownFunc = (input?: any): unknown => {
+//     return 2;
+// };
+
+// console.log(unknownFunc());
+
+// const neverFunc = (input: any): never => {
+//     while (true) {}
+// };
+
+// ---------------------------------------
+
+// const value: unknown = "hello";
+// console.log((value as string).length);
+
+// ---------------------------------------
+
+// let age = 21;
+// for (let i: number = 0; i < 10; i++) {
+//     age++;
+// }
+
+// ---------------------------------------
+
+// const tuples: [string, number] = ["ali", 21];
+
+// ---------------------------------------
+
+// const calculateTax = (
+//     income: number,
+//     taxYear: number = +new Date().getFullYear()
+// ): number => {
+//     console.log(`selected year: ${taxYear}`);
+
+//     if (taxYear > 2020) {
+//         return income * 1.4;
+//     }
+//     return income * 1.1;
+// };
+
+// console.log("=>", calculateTax(10_000));
+
+// ---------------------------------------
+
+let interns: {
+    name: string;
+    age: number;
+    ghID?: string;
+    readonly internID: number;
+}[] = [
     {
-        product: [
-            {
-                name: "Product 1",
-                price: 10.99,
-                discount: 2.0,
-                amount: 3,
-            },
-            {
-                name: "Product 2",
-                price: 19.99,
-                amount: 1,
-            },
-        ],
-        payment: {
-            price: 50.97,
-            method: "Credit Card",
-        },
+        name: "Ali",
+        age: 21,
+        ghID: "Ali_Sdg90",
+        internID: 20,
+    },
+    {
+        name: "Mostafa",
+        age: 23,
+        internID: 10,
     },
 ];
 
+interns[0].name = "Mamad";
+
+// interns[0].internID = 30;
+console.log(interns[0]);
+
 // ---------------------------------------
 
-const voidFunc = (input: any): void => {
-    const hello = "hello";
-    // return "hi";
+type intern = {
+    name: string;
+    age: number;
+    ghID?: string;
+    readonly internID: number;
 };
 
-const nullFunc = (input: any): null => {
-    const hello = "hello";
-    return null;
+const ali: intern = {
+    name: "Ali",
+    age: 21,
+    ghID: "Ali_Sdg90",
+    internID: 20,
 };
 
-const undefinedFunc = (input: any): undefined => {
-    const hello = "hello";
-    // return hello;
-    // return bye;
-    return undefined;
-};
-
-const anyFunc = (input?: any): any => {
-    return 2;
-};
-
-const unknownFunc = (input?: any): unknown => {
-    return 2;
-};
-
-console.log(unknownFunc());
-
-const neverFunc = (input: any): never => {
-    while (true) {}
+const mostafa: intern = {
+    name: "Mostafa",
+    age: 23,
+    internID: 10,
 };
 
 // ---------------------------------------
 
-const value: unknown = "hello";
-console.log((value as string).length);
+const showYear = (date: Date, showDate: boolean = true): number | undefined => {
+    if (showDate) {
+        return new Date(date).getFullYear();
+    } else {
+        return;
+    }
+};
+
+console.log(showYear(new Date()));
 
 // ---------------------------------------
 
-let age = 21;
-for (let i: number = 0; i < 10; i++) {
-    age++;
-}
+console.log(mostafa.ghID);
+console.log(mostafa?.ghID?.length);
