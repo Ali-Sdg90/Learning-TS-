@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 let interns = [
     {
         name: "Ali",
@@ -14,7 +13,6 @@ let interns = [
     },
 ];
 interns[0].name = "Mamad";
-console.log(interns[0]);
 const ali = {
     name: "Ali",
     age: 21,
@@ -34,7 +32,19 @@ const showYear = (date, showDate = true) => {
         return;
     }
 };
-console.log(showYear(new Date()));
-console.log((_a = mostafa === null || mostafa === void 0 ? void 0 : mostafa.ghID) === null || _a === void 0 ? void 0 : _a.length);
-console.log(mostafa.ghID);
+const createDynamicObj = (baseWord, count) => {
+    const dynamicObj = {};
+    for (let i = 0; i < count; i++) {
+        const key = `${baseWord}-${i}`;
+        dynamicObj[key] = randomValue();
+    }
+    return dynamicObj;
+};
+const randomValue = () => {
+    return Math.floor(Math.random() * 90) + 10;
+};
+const dynamicObj = createDynamicObj("Ali", 10);
+for (const key in dynamicObj) {
+    console.log(key, dynamicObj[key]);
+}
 //# sourceMappingURL=index.js.map

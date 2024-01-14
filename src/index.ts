@@ -234,7 +234,7 @@ let interns: {
 interns[0].name = "Mamad";
 
 // interns[0].internID = 30;
-console.log(interns[0]);
+// console.log(interns[0]);
 
 // ---------------------------------------
 
@@ -268,9 +268,45 @@ const showYear = (date: Date, showDate: boolean = true): number | undefined => {
     }
 };
 
-console.log(showYear(new Date()));
+// console.log(showYear(new Date()));
 
 // ---------------------------------------
 
-console.log(mostafa.ghID);
-console.log(mostafa?.ghID?.length);
+// console.log(mostafa.ghID);
+// console.log(mostafa?.ghID?.length);
+
+// My Stackoverflow Question :)
+
+const createDynamicObj = (baseWord: string, count: number) => {
+    const dynamicObj: Record<string, number> = {};
+
+    for (let i = 0; i < count; i++) {
+        const key = `${baseWord}-${i}`;
+        dynamicObj[key] = randomValue();
+    }
+
+    return dynamicObj;
+};
+
+const randomValue = () => {
+    return Math.floor(Math.random() * 90) + 10;
+};
+
+const dynamicObj = createDynamicObj("Ali", 10);
+
+for (const key in dynamicObj) {
+    console.log(key, dynamicObj[key]);
+}
+
+// const dynamicObj2 = {
+//     "Ali-0": 35,
+//     "Ali-1": 66,
+//     "Ali-2": 50,
+//     "Ali-3": 79,
+//     "Ali-4": 33,
+//     "Ali-5": 62,
+//     "Ali-6": 30,
+//     "Ali-7": 52,
+//     "Ali-8": 89,
+//     "Ali-9": 16,
+// };
