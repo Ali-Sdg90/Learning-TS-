@@ -66,4 +66,13 @@ class Survivor2 {
     }
 }
 const Hello2 = new Survivor2("Ali", "1402-11-01", !!Math.trunc(Math.random() * 2));
+let a;
+let b = 1;
+console.log(a !== null && a !== void 0 ? a : "a is falsy");
+a && (a = "Aloha");
+b && (b = 2);
+console.log(a, b);
+a || (a = "Aloha");
+b || (b = 3);
+console.log(a, b);
 //# sourceMappingURL=index.js.map

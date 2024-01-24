@@ -342,8 +342,6 @@ const Hello = new Survivor(
     !!Math.trunc(Math.random() * 2)
 );
 
-// console.log(Hello.needHelp());
-
 interface SurvivorFormat2 {
     name: string;
     date: string;
@@ -369,7 +367,19 @@ const Hello2 = new Survivor2(
     !!Math.trunc(Math.random() * 2)
 );
 
-// console.log(Hello2.needHelp());
-
 // ---------------------------------------
 
+let a;
+let b = 1;
+
+console.log(a ?? "a is falsy");
+
+a &&= "Aloha";
+b &&= 2;
+
+console.log(a, b);
+
+a ||= "Aloha";
+b ||= 3;
+
+console.log(a, b);
