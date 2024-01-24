@@ -13,7 +13,7 @@ let interns = [
     },
 ];
 interns[0].name = "Mamad";
-const ali = {
+const ali2 = {
     name: "Ali",
     age: 21,
     ghID: "Ali_Sdg90",
@@ -44,7 +44,26 @@ const randomValue = () => {
     return Math.floor(Math.random() * 90) + 10;
 };
 const dynamicObj = createDynamicObj("Ali", 10);
-for (const key in dynamicObj) {
-    console.log(key, dynamicObj[key]);
+class Survivor {
+    constructor(name, date, isHealing) {
+        this.needHelp = () => {
+            console.log("Hello, i'm fine. no i'm not...");
+        };
+        this.name = name;
+        this.date = date;
+        this.isHealing = isHealing;
+    }
 }
+const Hello = new Survivor("Ali", "1402-11-01", !!Math.trunc(Math.random() * 2));
+class Survivor2 {
+    constructor(name, date, isHealing) {
+        this.name = name;
+        this.date = date;
+        this.isHealing = isHealing;
+        this.needHelp = () => {
+            console.log("Hello, i'm fine. no i'm not...");
+        };
+    }
+}
+const Hello2 = new Survivor2("Ali", "1402-11-01", !!Math.trunc(Math.random() * 2));
 //# sourceMappingURL=index.js.map

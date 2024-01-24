@@ -245,7 +245,7 @@ type intern = {
     readonly internID: number;
 };
 
-const ali: intern = {
+const ali2: intern = {
     name: "Ali",
     age: 21,
     ghID: "Ali_Sdg90",
@@ -294,9 +294,9 @@ const randomValue = () => {
 
 const dynamicObj = createDynamicObj("Ali", 10);
 
-for (const key in dynamicObj) {
-    console.log(key, dynamicObj[key]);
-}
+// for (const key in dynamicObj) {
+//     console.log(key, dynamicObj[key]);
+// }
 
 // const dynamicObj2 = {
 //     "Ali-0": 35,
@@ -310,3 +310,66 @@ for (const key in dynamicObj) {
 //     "Ali-8": 89,
 //     "Ali-9": 16,
 // };
+
+// ---------------------------------------
+
+interface SurvivorFormat {
+    name: string;
+    date: string;
+    isHealing: boolean;
+    needHelp: () => void;
+}
+
+class Survivor implements SurvivorFormat {
+    name: string;
+    date: string;
+    isHealing: boolean;
+
+    constructor(name: string, date: string, isHealing: boolean) {
+        this.name = name;
+        this.date = date;
+        this.isHealing = isHealing;
+    }
+
+    needHelp = () => {
+        console.log("Hello, i'm fine. no i'm not...");
+    };
+}
+
+const Hello = new Survivor(
+    "Ali",
+    "1402-11-01",
+    !!Math.trunc(Math.random() * 2)
+);
+
+// console.log(Hello.needHelp());
+
+interface SurvivorFormat2 {
+    name: string;
+    date: string;
+    isHealing: boolean;
+    needHelp: () => void;
+}
+
+class Survivor2 implements SurvivorFormat2 {
+    constructor(
+        public name: string,
+        public date: string,
+        public isHealing: boolean
+    ) {}
+
+    needHelp = () => {
+        console.log("Hello, i'm fine. no i'm not...");
+    };
+}
+
+const Hello2 = new Survivor2(
+    "Ali",
+    "1402-11-01",
+    !!Math.trunc(Math.random() * 2)
+);
+
+// console.log(Hello2.needHelp());
+
+// ---------------------------------------
+
